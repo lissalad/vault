@@ -1,6 +1,10 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRef } from "react";
 import classNames from "classnames";
+import SignOutButton from "../components/SignOutButton";
+import Header from "../components/Header";
+import VaultIcon from "../components/VaultIcon";
+import Link from "next/link";
 
 const LoginPage = () => {
   const supabase = useSupabaseClient();
@@ -19,7 +23,7 @@ const LoginPage = () => {
   return (
     <div
       className={classNames(
-        "flex flex-col bg-rose-200 rounded-2xl px-10 py-8 w-fit items-center text-rose-900 shadow-xl"
+        "flex flex-col bg-rose-200 rounded-2xl px-10 py-8 w-fit items-center text-rose-900 shadow-xl mx-auto my-4"
       )}
     >
       <div
@@ -48,14 +52,20 @@ const LoginPage = () => {
 
 const Home = () => {
   const session = useSession();
-  const supabase = useSupabaseClient();
 
-  async function signOut() {
-    const { error } = await supabase.auth.signOut();
-  }
   return (
-    <div className="container" style={{ padding: "50px 0 100px 0" }}>
-      {!session ? <LoginPage /> : <button onClick={signOut}>sign out</button>}
+    <div className={classNames("")}>
+      {!session ? (
+        <LoginPage />
+      ) : (
+        <div>
+          <Header />
+          <main>
+            {/* <VaultIcon /> */}
+            <Link href="/secrets">open your vault</Link>
+          </main>
+        </div>
+      )}
     </div>
   );
 };
