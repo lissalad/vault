@@ -65,9 +65,7 @@ export default function New() {
           </div>
         </div>
 
-        <button className="bg-yellow-200 text-yellow-800 px-10 py-2 rounded-lg whitespace-nowrap border border-yellow-500">
-          submit
-        </button>
+        <button className="button">submit</button>
       </form>
     </div>
   );
