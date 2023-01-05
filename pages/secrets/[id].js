@@ -6,6 +6,7 @@ import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const Secret = () => {
   const router = useRouter();
+  const supabase = useSupabaseClient();
 
   const { id } = router.query;
   const [secret, setSecret] = useState();
@@ -24,7 +25,8 @@ const Secret = () => {
     if (id) {
       fetchSecret(id).then(({ secret, error }) => {
         if (error) {
-          router.push("/");
+          // router.push("/");
+          console.log(error);
         } else {
           setSecret(secret);
         }
@@ -32,13 +34,21 @@ const Secret = () => {
     }
   });
 
+  async function handleDelete() {
+    const { data, error } = await supabase
+      .from("secrets")
+      .delete()
+      .match({ id: secret.id });
+    router.push("/secrets");
+  }
+
   return (
     <>
       {secret ? (
         <div>
           <h1>{secret.title}</h1>
           <p>{secret.content}</p>
-          <a></a>
+          <button onClick={handleDelete}>delete</button>
         </div>
       ) : (
         <></>
