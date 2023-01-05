@@ -1,5 +1,5 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import classNames from "classnames";
 import SignOutButton from "../components/SignOutButton";
 import Header from "../components/Header";
@@ -8,18 +8,35 @@ import Link from "next/link";
 
 const LoginPage = () => {
   const supabase = useSupabaseClient();
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState("");
   // const inputRef = useRef();
 
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithOtp({
-      email: "elissalaymon@gmail.com",
+      email: email,
       options: {
         emailRedirectTo: "http://localhost:3000",
       },
     });
-    console.log({ data, error });
+
+    if (error) {
+      console.log(error);
+    } else {
+      setSubmitted(true);
+    }
   }
 
+  // check email page
+  if (submitted) {
+    return (
+      <div>
+        <p>check your email</p>
+      </div>
+    );
+  }
+
+  // login form
   return (
     <div className={classNames("box", "")}>
       {/* title and key */}
@@ -40,7 +57,11 @@ const LoginPage = () => {
             "md:flex-row"
           )}
         >
-          <input type="text" className="text-input" />
+          <input
+            type="text"
+            onChange={(e) => setEmail(e.target.value)}
+            className="text-input"
+          />
         </div>
       </div>
 
