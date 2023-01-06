@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <div
       className={classNames(
-        "flex flex-row bg-blue-100 w-full border-8 border-blue-300 border-t-0 items-center justify-between px-6 py-3 text-sky-700 mx-8 rounded-b-xl"
+        "flex flex-row bg-blue-100 border-8 border-blue-300 border-t-0 justify-center items-center px-6 py-3 text-sky-700 mx-8 rounded-b-xl w-full"
       )}
     >
       {session ? (

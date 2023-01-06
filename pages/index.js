@@ -43,7 +43,12 @@ const LoginPage = () => {
       <div
         className={classNames("mb-3 text-center flex flex-col items-center")}
       >
-        <img src="/images/key.png" height="100" width="100" />
+        <img
+          className="mb-3 w-32 md:"
+          src="/images/key.png"
+          height="100"
+          width="200"
+        />
         <h1 className="text-4xl font-semibold mt-4">welcome to vault</h1>
         {/* <h2 className="text-xl mt-2">your secrets are safe with me!</h2> */}
       </div>
@@ -85,7 +90,7 @@ const Home = () => {
         <div>
           <main>
             <div className="flex flex-col-reverse md:flex-col items-center my-32">
-              <h1 className="text-2xl text-center my-12">
+              <h1 className="text-2xl text-center my-8">
                 open the vault to access your secrets
               </h1>
 

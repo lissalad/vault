@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 import classNames from "classnames";
+import { RightArrow } from "../components/Icons";
 
 export default function Secrets() {
   const [secrets, setSecrets] = useState();
@@ -26,27 +27,32 @@ export default function Secrets() {
   }, []);
 
   return (
-    <div className="box">
-      <h1 className={classNames("text-center flex flex-col items-center")}>
-        Your Secrets:
-      </h1>
+    <div className="w-full">
       <div>
+        <h1 className={classNames("text-2xl mb-4 text-center")}>
+          Your Secret Vault
+        </h1>
+
         {secrets && (
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-stone-400 border-8 border-stone-600 shadow-xl rounded-xl w-full h-[600px] py-3">
             {secrets.map((secret) => (
-              <a key={secret.id} href={"/secrets/" + secret.id}>
-                {secret.title}
+              <a
+                className="text-xl hover:bg-stone-300 px-6 py-3 flex flex-row space-x-4"
+                key={secret.id}
+                href={"/secrets/" + secret.id}
+              >
+                <RightArrow />
+                <p>{secret.title}</p>
               </a>
             ))}
           </div>
         )}
       </div>
-
-      <div>
-        <a href="/secrets/new" className="button">
-          new secret
-        </a>
-      </div>
     </div>
   );
+}
+{
+  /* <a href="/secrets/new" className="button absolute">
+              new
+            </a> */
 }

@@ -8,7 +8,7 @@ body {
 }
 
 .box {
-  @apply flex flex-col bg-rose-200 text-rose-900 border-8 border-rose-300 rounded-2xl items-center shadow-xl;
+  @apply flex flex-col bg-rose-200 text-rose-900 border-8 border-rose-300 rounded-2xl items-center shadow-xl w-fit;
   @apply px-4 py-9 space-y-8;
   @apply md:space-y-12;
 
@@ -16,7 +16,7 @@ body {
 }
 
 .button {
-  @apply bg-yellow-200 text-yellow-800 hover:bg-yellow-500 hover:shadow-xl px-10 py-2 rounded-lg whitespace-nowrap border-4 border-yellow-500 w-fit;
+  @apply bg-yellow-200 text-yellow-800 hover:bg-yellow-500 hover:shadow-xl px-10 py-2 rounded-lg whitespace-nowrap border-4 border-yellow-500 md:w-fit md:static;
 }
 
 .text-input {
@@ -34,7 +34,7 @@ body {
 }
 
 .page-wrapper {
-  @apply lg:max-w-7xl mx-auto;
+  @apply lg:max-w-7xl mx-auto w-full;
   @apply py-3 md:py-8;
 }
 
