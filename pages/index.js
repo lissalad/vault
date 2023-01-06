@@ -10,7 +10,6 @@ const LoginPage = () => {
   const supabase = useSupabaseClient();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState("");
-  // const inputRef = useRef();
 
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithOtp({
@@ -30,8 +29,9 @@ const LoginPage = () => {
   // check email page
   if (submitted) {
     return (
-      <div>
-        <p>check your email</p>
+      <div className="box">
+        <img src="/images/email.png" width="130" />
+        <p className="text-2xl px-9">check your email</p>
       </div>
     );
   }
@@ -76,16 +76,23 @@ const LoginPage = () => {
 const Home = () => {
   const session = useSession();
 
+  // home page
   return (
     <div className={classNames("")}>
       {!session ? (
         <LoginPage />
       ) : (
         <div>
-          <Header />
           <main>
-            {/* <VaultIcon /> */}
-            <Link href="/secrets">open your vault</Link>
+            <div className="flex flex-col items-center">
+              <h1 className="text-2xl">
+                open the vault to access your secrets
+              </h1>
+
+              <Link href="/secrets">
+                <VaultIcon />
+              </Link>
+            </div>
           </main>
         </div>
       )}

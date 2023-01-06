@@ -6,5 +6,9 @@ export default function SignOutButton() {
   async function signOut() {
     const { error } = await supabase.auth.signOut();
   }
-  return <button onClick={signOut}>sign out</button>;
+  return (
+    <button className="whitespace-nowrap hover:text-sky-900" onClick={signOut}>
+      sign out
+    </button>
+  );
 }
