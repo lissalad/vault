@@ -76,7 +76,7 @@ const LoginPage = () => {
 const Home = () => {
   const session = useSession();
 
-  // home page
+  // home vault page
   return (
     <div className={classNames("")}>
       {!session ? (
@@ -84,8 +84,8 @@ const Home = () => {
       ) : (
         <div>
           <main>
-            <div className="flex flex-col items-center">
-              <h1 className="text-2xl">
+            <div className="flex flex-col-reverse md:flex-col items-center my-32">
+              <h1 className="text-2xl text-center my-12">
                 open the vault to access your secrets
               </h1>
 

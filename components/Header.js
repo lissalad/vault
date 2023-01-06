@@ -1,12 +1,17 @@
 import classNames from "classnames";
 import SignOutButton from "./SignOutButton";
+import Link from "next/link";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
 export default function Header() {
   const session = useSession();
 
   function Title() {
-    return <h1 className="text-3xl py-2 text-center">vault</h1>;
+    return (
+      <Link href="/">
+        <h1 className="text-3xl py-2 text-center hover:text-sky-900">vault</h1>
+      </Link>
+    );
   }
 
   return (
