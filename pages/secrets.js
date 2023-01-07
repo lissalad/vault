@@ -39,7 +39,7 @@ export default function Secrets() {
   return (
     <div className="w-full mt-4">
       <div>
-        <h1 className={classNames("text-2xl mb-4 text-center")}>
+        <h1 className={classNames("text-2xl mb-5 text-center")}>
           Your Secret Vault
         </h1>
 

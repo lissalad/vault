@@ -14,8 +14,6 @@ export default function New() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(session["user"].email);
-
     if (!title || !content) {
       console.log("missing field");
       return;

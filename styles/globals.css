@@ -30,12 +30,12 @@ body {
 
 #main-wrapper {
   @apply flex flex-col items-center;
-  @apply px-2 md:px-20;
+  @apply  md:px-20;
 }
 
 .page-wrapper {
   @apply lg:max-w-7xl mx-auto w-full;
-  @apply py-3 md:py-8;
+  @apply px-2 py-3 md:py-8;
 }
 
 
