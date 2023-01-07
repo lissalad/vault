@@ -43,8 +43,8 @@ export default function New() {
         "flex flex-col bg-rose-200 rounded-2xl px-10 py-8 w-fit items-center text-rose-900 shadow-xl mx-auto my-4"
       )}
     >
-      <form onSubmit={handleSubmit}>
-        <h1 className="text-5xl font-semibold mt-4">add confession</h1>
+      <form classname="" onSubmit={handleSubmit}>
+        <h1 className="text-3xl text-center font-semibold mt-4">new secret</h1>
         <div className="my-9 space-y-3">
           <div>
             <p>title</p>

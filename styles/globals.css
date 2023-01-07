@@ -16,7 +16,7 @@ body {
 }
 
 .button {
-  @apply bg-yellow-200 text-yellow-800 hover:bg-yellow-500 hover:shadow-xl px-10 py-2 rounded-lg whitespace-nowrap border-4 border-yellow-500 md:w-fit md:static;
+  @apply bg-yellow-200 text-yellow-800 hover:bg-yellow-500 hover:shadow-xl px-10 py-2 rounded-lg whitespace-nowrap border-4 border-yellow-500 md:w-fit;
 }
 
 .text-input {

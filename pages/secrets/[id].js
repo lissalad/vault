@@ -56,14 +56,16 @@ const Secret = () => {
             </a>
             <button
               className="p-3 hover:bg-red-300 rounded-2xl"
-              onClick={handleDelete}
+              onClick={() => {
+                handleDelete;
+              }}
             >
               <Trash />
             </button>
           </div>
-          <h1 className="text-6xl mb-9 pb-5 border-b-4 border-black text-center">
+          <h className="text-6xl mb-9 pb-5 border-b-4 border-black text-center">
             {secret.title}
-          </h1>
+          </h>
 
           <p className="text-lg text-left indent-5">{secret.content}</p>
         </div>
