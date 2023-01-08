@@ -29,16 +29,16 @@ const LoginPage = () => {
   // check email page
   if (submitted) {
     return (
-      <div className="box">
+      <div className="form">
         <img src="/images/email.png" width="130" />
-        <p className="text-2xl px-9">check your email</p>
+        <p className="title mt-8">check your email</p>
       </div>
     );
   }
 
   // login form
   return (
-    <div className={classNames("box", "")}>
+    <div className={classNames("form", "")}>
       {/* title and key */}
       <div
         className={classNames("mb-3 text-center flex flex-col items-center")}
@@ -49,12 +49,14 @@ const LoginPage = () => {
           height="100"
           width="200"
         />
-        <h1 className="text-4xl font-semibold mt-4">welcome to vault</h1>
+        <h1 className="text-4xl font-semibold mt-4 whitespace-nowrap mb-8">
+          welcome to vault
+        </h1>
         {/* <h2 className="text-xl mt-2">your secrets are safe with me!</h2> */}
       </div>
 
       {/* enter email */}
-      <div className={classNames("space-y-3 items-center")}>
+      <div className={classNames("space-y-3 items-center w-full")}>
         <p className="text-xl text-center">enter your email</p>
         <div
           className={classNames(
@@ -63,7 +65,7 @@ const LoginPage = () => {
           )}
         >
           <input
-            type="text"
+            type="email"
             onChange={(e) => setEmail(e.target.value)}
             className="text-input"
           />
@@ -71,7 +73,10 @@ const LoginPage = () => {
       </div>
 
       {/* button */}
-      <button onClick={signInWithEmail} className="button">
+      <button
+        onClick={signInWithEmail}
+        className="button button bg-purple-200 text-purple-800 hover:bg-purple-500 border-purple-500"
+      >
         join
       </button>
     </div>
@@ -88,17 +93,15 @@ const Home = () => {
         <LoginPage />
       ) : (
         <div>
-          <main>
-            <div className="flex flex-col-reverse md:flex-col items-center my-32">
-              <h1 className="text-2xl text-center my-8">
-                open the vault to access your secrets
-              </h1>
+          <div className="flex flex-col-reverse md:flex-col items-center">
+            <h1 className="title md:whitespace-nowrap text-purple-100 mt-12 md:mt-0">
+              open the vault to access your secrets
+            </h1>
 
-              <Link href="/secrets">
-                <VaultIcon />
-              </Link>
-            </div>
-          </main>
+            <Link href="/secrets">
+              <VaultIcon />
+            </Link>
+          </div>
         </div>
       )}
     </div>

@@ -8,7 +8,7 @@ body {
 }
 
 .box {
-  @apply flex flex-col bg-rose-200 text-rose-900 border-8 border-rose-300 rounded-2xl items-center shadow-xl w-fit;
+  @apply flex flex-col bg-purple-900 border-8 border-rose-300 rounded-2xl items-center shadow-xl w-fit;
   @apply px-4 py-9 space-y-8;
   @apply md:space-y-12;
 
@@ -16,28 +16,44 @@ body {
 }
 
 .button {
-  @apply bg-yellow-200 text-yellow-800 hover:bg-yellow-500 hover:shadow-xl px-10 py-2 rounded-lg whitespace-nowrap border-4 border-yellow-500 md:w-fit;
+  @apply hover:shadow-xl px-10 py-2 rounded-sm whitespace-nowrap border-4 md:w-fit;
+}
+
+.title {
+  @apply md:text-4xl text-3xl text-center;
 }
 
 .text-input {
-  @apply w-full rounded-lg bg-blue-50 border-4 border-blue-200 text-blue-500 px-3 py-2;
-  @apply min-w-[80vw];
-  @apply md:min-w-[500px] md:mx-4;
+  @apply w-full text-lg rounded-sm bg-purple-50 border-4 border-black px-3 py-2 mb-8 mt-2;
+
+
 
   letter-spacing: 1.5px;
 
 }
 
+.form {
+  @apply flex flex-col bg-stone-300 rounded-sm border-8 border-black shadow-xl items-center shadow-xl mx-auto my-4 md:max-w-[500px] p-12 text-black;
+}
+
+textarea{
+  @apply md:h-[300px];
+}
+
 #main-wrapper {
-  @apply flex flex-col items-center relative h-[100vh];
-  @apply  md:px-20;
+  @apply flex flex-col items-center md:justify-center pt-20 md:pt-0 md:px-10 relative h-[100vh] md:max-w-[1000px] w-full mx-auto backdrop-blur-2xl;
 }
 
 .page-wrapper {
-  @apply lg:max-w-7xl mx-auto w-full;
-  @apply px-2 py-3 md:py-8;
+  @apply mx-auto w-full md:p-4;
+
 }
 
+body {
+  /* background-image: url("/images/wall.jpeg"); */
+  background-size: 500px;
+  color: black;
+}
 
 @font-face {
   font-family: "8bit";

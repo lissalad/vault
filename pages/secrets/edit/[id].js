@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { supabase } from "../../../utils/supabaseClient";
+import Link from "next/link";
 
 const Edit = () => {
   const session = useSession();
@@ -63,39 +64,49 @@ const Edit = () => {
     }
   }, [id, router]);
 
-  return (
-    <div
-      className={classNames(
-        "flex flex-col bg-rose-200 rounded-2xl px-10 py-8 w-fit items-center text-rose-900 shadow-xl mx-auto my-4"
-      )}
-    >
-      <form className="" onSubmit={handleSubmit}>
-        <h1 className="text-3xl text-center font-semibold mt-4">edit secret</h1>
-        <div className="my-9 space-y-3">
-          <div>
-            <p>title</p>
-            <input
-              type="text"
-              className="w-full rounded-lg px-3"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
+  // useEffect(() => {
+  //   if (!session?.user) {
+  //     router.push("/");
+  //   }
+  // }, [router, session?.user]);
 
-          <div>
-            <p>confession</p>
-            <input
-              type="textarea"
-              className="w-full rounded-lg px-3"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            />
-          </div>
+  return (
+    <form className="form" onSubmit={handleSubmit}>
+      <h1 className="title">edit secret</h1>
+      <div className="md:my-9 mt-9 space-y-3 w-full">
+        <div>
+          <p>title</p>
+          <input
+            type="text"
+            className="text-input"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
 
-        <button className="button">save</button>
-      </form>
-    </div>
+        <div>
+          <p>confession</p>
+          <textarea
+            className="text-input"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className="flex md:flex-row md:space-y-0 flex-col-reverse text-center w-full md:justify-between">
+        <Link href="/secrets">
+          <p className="button bg-yellow-200 text-yellow-800 hover:bg-yellow-500 border-yellow-500 md:mb-0 mb-4">
+            cancel
+          </p>
+        </Link>
+        <button
+          className="button bg-purple-200 text-purple-800 hover:bg-purple-500 border-purple-500"
+          type="submit"
+        >
+          save
+        </button>
+      </div>
+    </form>
   );
 };
 export default Edit;
