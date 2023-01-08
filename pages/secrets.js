@@ -28,12 +28,12 @@ export default function Secrets() {
     fetchSecrets();
   }, []);
 
-  async function handleDelete() {
+  async function handleDelete(id) {
     const { data, error } = await supabase
       .from("secrets")
       .delete()
-      .match({ id: selectedSecret.id });
-    router.push("/secrets");
+      .match({ id: id });
+    setSecrets(secrets.filter((secret) => secret.id !== id));
   }
 
   return (
@@ -71,7 +71,7 @@ export default function Secrets() {
                       </a>
                       <button
                         className="p-3 hover:bg-red-200/80 rounded-2xl"
-                        // onClick={handleDelete()}
+                        onClick={() => handleDelete(secret.id)}
                       >
                         <Trash />
                       </button>

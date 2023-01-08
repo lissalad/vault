@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import QuickHide from "../components/QuickHide";
 
 const Layout = ({ children }) => {
   return (
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
       <div className="page-wrapper">
         <div className="">{children}</div>
       </div>
+      {/* <QuickHide /> */}
     </div>
   );
 };

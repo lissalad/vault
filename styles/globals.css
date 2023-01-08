@@ -29,7 +29,7 @@ body {
 }
 
 #main-wrapper {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center relative h-[100vh];
   @apply  md:px-20;
 }
 
