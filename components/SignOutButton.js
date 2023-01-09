@@ -11,7 +11,7 @@ export default function SignOutButton() {
   }
   return (
     <button
-      className="whitespace-nowrap hover:text-purple-100 border-2 border-purple-300 px-4 py-1 hover:bg-purple-500 hover:shadow-xl"
+      className="whitespace-nowrap border-4 border-black bg-stone-50/20 px-4 py-1 hover:shadow-xl hover:bg-stone-600 hover:text-stone-200"
       onClick={signOut}
     >
       sign out

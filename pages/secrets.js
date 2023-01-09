@@ -49,13 +49,13 @@ export default function Secrets() {
     //   {session?.user ? (
     <div className="w-full mt-4">
       <div>
-        <h1 className="title text-purple-100">Your Secret Vault</h1>
+        <h1 className="title">Your Secret Vault</h1>
 
         {secrets && (
           <div className="flex flex-col bg-stone-400 border-8 border-black shadow-xl rounded-sm h-[600px] py-3 relative mt-8">
             <a
               href="/secrets/new"
-              className="absolute right-4 bottom-4 button bg-green-200 text-green-800 hover:bg-green-500 border-green-500"
+              className="absolute right-4 bottom-4 button bg-purple-100 text-purple-800 hover:bg-purple-500 border-purple-500 "
             >
               new
             </a>
@@ -70,13 +70,15 @@ export default function Secrets() {
                       className="flex flex-row space-x-4"
                       // onClick={setSelectedSecret(secret)}
                     >
-                      <div className="ui-open:rotate-90 ">&gt;</div>
+                      <div className="ui-open:rotate-90 transition-all">
+                        &gt;
+                      </div>
                       <p>{secret.title}</p>
                     </div>
                     <div className="flex flex-row items-center ui-not-open:invisible ui-open:visible space-x-2 text-xs">
                       <a
                         href={"/secrets/edit/" + secret.id}
-                        className="border-2 px-3 py-1 bg-yellow-200 text-yellow-800 hover:bg-yellow-500 border-yellow-500 md:mb-0 mb-4"
+                        className="border-2 px-3 py-1 bg-yellow-100 text-yellow-800 hover:bg-yellow-300 border-yellow-300 md:mb-0 mb-4"
                       >
                         {/* <Pencil /> */}
                         <p>edit</p>
@@ -86,7 +88,7 @@ export default function Secrets() {
                         onClick={() => handleDelete(secret.id)}
                       >
                         {/* <Trash /> */}
-                        <p className="border-2 px-3 py-1 bg-red-200 text-red-800 hover:bg-red-500 border-red-500 md:mb-0 mb-4">
+                        <p className="border-2 px-3 py-1 bg-red-100 text-red-800 hover:bg-red-300 border-red-300 md:mb-0 mb-4">
                           delete
                         </p>
                       </button>

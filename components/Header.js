@@ -9,7 +9,7 @@ export default function Header() {
   function Title() {
     return (
       <Link href="/">
-        <h1 className="text-center text-3xl hover:text-purple-100 semibold">
+        <h1 className="text-center text-3xl hover:text-stone-300 semibold">
           vault
         </h1>
       </Link>
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <div
       className={classNames(
-        "absolute top-5 flex flex-row justify-center items-center px-12 py-3 text-white md:mx-8 w-fit bg-purple-900 py-4 shadow-xl"
+        "absolute top-0 flex flex-row justify-center items-center py-3 text-black w-full py-4 md:px-20 border-b bg-stone-50/20 border-stone-300/30"
       )}
     >
       {session ? (
