@@ -4,6 +4,7 @@ import { supabase } from "../utils/supabaseClient";
 import classNames from "classnames";
 import { RightArrow, DownArrow, Trash, Pencil } from "../components/Icons";
 import { Menu } from "@headlessui/react";
+import Link from "next/link";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
 export default function Secrets() {
@@ -53,12 +54,12 @@ export default function Secrets() {
 
         {secrets && (
           <div className="flex flex-col bg-stone-400 border-8 border-black shadow-xl rounded-sm h-[600px] py-3 relative mt-8">
-            <a
+            <Link
               href="/secrets/new"
               className="absolute right-4 bottom-4 button bg-purple-100 text-purple-800 hover:bg-purple-500 border-purple-500 "
             >
               new
-            </a>
+            </Link>
             {secrets.map((secret) => (
               <div
                 key={secret.id}
