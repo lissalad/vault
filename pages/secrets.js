@@ -77,13 +77,13 @@ export default function Secrets() {
                       <p>{secret.title}</p>
                     </div>
                     <div className="flex flex-row items-center ui-not-open:invisible ui-open:visible space-x-2 text-xs">
-                      <a
+                      <Link
                         href={"/secrets/edit/" + secret.id}
                         className="border-2 px-3 py-1 bg-yellow-100 text-yellow-800 hover:bg-yellow-300 border-yellow-300 md:mb-0 mb-4"
                       >
                         {/* <Pencil /> */}
                         <p>edit</p>
-                      </a>
+                      </Link>
                       <button
                         className=" hover:bg-red-200/80 rounded-2xl"
                         onClick={() => handleDelete(secret.id)}
